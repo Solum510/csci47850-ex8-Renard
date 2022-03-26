@@ -7,13 +7,13 @@ import org.junit.jupiter.params.provider.CsvFileSource;
 public class TestComputation_CsvFileSource {
 
    // TODO: Write your answer to complete this test case
-   @ParameterizedTest
-   @CsvFileSource(resources = "")
-   public void testGetDiscount() throws Exception {
+   @ParameterizedTest//(name = "{index} => input1={0}, input2={1}, result={2}")
+   @CsvFileSource(resources = "computation_dataset.csv")
+   public void testGetDiscount(int input1, int input2, int expected) throws Exception {
 
 	  Computation com = new Computation();
-      int result = 0; 
-      Assert.assertEquals(result, null);
+      int result = com.getDiscount(input1, input2); 
+      Assert.assertEquals(result, expected);
 
    }
 }
